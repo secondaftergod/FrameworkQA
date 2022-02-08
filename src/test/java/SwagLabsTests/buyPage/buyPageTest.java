@@ -15,12 +15,14 @@ public class buyPageTest extends BaseTest {
         basePage.open(LOGIN_PAGE_URL);
         loginPage.typeLogin("standard_user","secret_sauce");
         itemsPage.buy_item();
-
+        itemsPage.go_to_buy_items_page();
 
     }
     @Test
     public void checkBuyItems(){
-        Assert.assertEquals(6, buyPage.checkBuyList().size());
+        for(int i=0; i<buyPage.checkBuyList().size();i++) {
+            Assert.assertEquals(itemsPage.buy_list.get(i).item_name,buyPage.checkBuyList().get(i).getText());
+        }
     }
     @Test
     public void checkBuyPage(){

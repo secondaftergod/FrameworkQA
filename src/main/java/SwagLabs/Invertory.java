@@ -8,4 +8,5 @@ public class Invertory {
         this.item_price=item_price;
     }
 
+
 }

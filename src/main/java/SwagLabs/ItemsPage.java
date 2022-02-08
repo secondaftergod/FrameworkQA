@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ItemsPage extends BasePage {
+    public static List<Invertory> buy_list;
     public ItemsPage(WebDriver driver) {
         super(driver);
     }
@@ -46,11 +47,12 @@ public class ItemsPage extends BasePage {
             String price = prices.replace("$", "");
             item_obj.add(new Invertory(items, price));
         }
-        return item_obj;
+        return buy_list=item_obj;
     }
 
     public void go_to_buy_items_page() {
         driver.findElement(buy_button).click();
+
     }
 
     public void buy_item() {
