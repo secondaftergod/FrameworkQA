@@ -15,7 +15,7 @@ public class buyPageTest extends BaseTest {
         basePage.open(LOGIN_PAGE_URL);
         loginPage.typeLogin("standard_user","secret_sauce");
         itemsPage.buy_item();
-        itemsPage.go_to_buy_items_page();
+
 
     }
     @Test
