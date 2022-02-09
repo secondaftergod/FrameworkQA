@@ -1,12 +1,12 @@
 package SwagLabsTests.overviewPage;
 
-import org.checkerframework.checker.units.qual.A;
+
+import SwagLabs.ItemsPage;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import test.base.BaseTest;
 
-import java.util.Optional;
 
 import static constans.Constant.Urls.LOGIN_PAGE_URL;
 
@@ -33,8 +33,8 @@ public class OverviewPage extends BaseTest {
     @Test
     public void eqBuyPriceAndTotalPriceAndFullPrice(){
         Double pr=0.0;
-        for(int i=0; i<itemsPage.buy_list.size();i++){
-            pr+=Double.valueOf(itemsPage.buy_list.get(i).item_price);
+        for(int i = 0; i< ItemsPage.buy_list.size(); i++){
+            pr+=Double.parseDouble(ItemsPage.buy_list.get(i).item_price);
         }
         String items_price=String.valueOf(pr);
         Assert.assertEquals(items_price,overviewPage.getTotalPriceOrder());
@@ -44,9 +44,9 @@ public class OverviewPage extends BaseTest {
     public void getTotalPrice(){
         Double pr=0.0;
         for(int i=0; i<itemsPage.buy_list.size();i++){
-            pr+=Double.valueOf(itemsPage.buy_list.get(i).item_price);
+            pr+=Double.parseDouble(ItemsPage.buy_list.get(i).item_price);
         }
-        Double tax_items= Double.valueOf(overviewPage.getTax())+pr;
+        Double tax_items= Double.parseDouble(overviewPage.getTax())+pr;
         Double total= Double.valueOf(overviewPage.getTotalPrice());
         Assert.assertEquals(tax_items,total);
     }

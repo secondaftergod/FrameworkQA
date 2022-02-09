@@ -10,19 +10,19 @@ public class CheckOutPage extends BasePage {
     public CheckOutPage(WebDriver driver) {
         super(driver);
     }
-    private By checkout_title=By.xpath("//*[@id=\"header_container\"]/div[2]/span");
-    private By cancel_button=By.xpath("//*[@id=\"cancel\"]");
-    private By order_firstName=By.xpath("//*[@id=\"first-name\"]");
-    private By order_lastName=By.xpath("//*[@id=\"last-name\"]");
-    private By order_Zip=By.xpath("//*[@id=\"postal-code\"]");
-    private By continue_button= By.xpath("//*[@id=\"continue\"]");
-    private By infoError=By.xpath("//*[@data-test='error']");
+    private final By checkout_title=By.xpath("//*[@id=\"header_container\"]/div[2]/span");
+    private final By cancel_button=By.xpath("//*[@id=\"cancel\"]");
+    private final By order_firstName=By.xpath("//*[@id=\"first-name\"]");
+    private final By order_lastName=By.xpath("//*[@id=\"last-name\"]");
+    private final By order_Zip=By.xpath("//*[@id=\"postal-code\"]");
+    private final By continue_button= By.xpath("//*[@id=\"continue\"]");
+    private final By infoError=By.xpath("//*[@data-test='error']");
 
     public String getTitle(){
-       return driver.findElement(checkout_title).getText();
+       return find(checkout_title).getText();
     }
     public void go_back_toBasket(){
-        driver.findElement(cancel_button).click();
+        find(cancel_button).click();
     }
     public CheckOutPage order_firstNameInput(String name){
         find(order_firstName).sendKeys(name);

@@ -1,7 +1,6 @@
 package SwagLabs;
 
 import Pages.BasePage;
-import net.bytebuddy.asm.Advice;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,11 +13,11 @@ public class BuyPage extends BasePage {
     }
     
     
-    private By buy_page_title = By.xpath("//span[@class='title']");
-    private By items_on_buy_page= By.xpath("//*[@class='inventory_item_name']");
-    private By remove_button = By.xpath("//button[text()=\"Remove\"]");
-    private By backToShopping_button=By.xpath("//*[@id=\"continue-shopping\"]");
-    private By checkout_button=By.xpath("//*[@id=\"checkout\"]");
+    private final By buy_page_title = By.xpath("//span[@class='title']");
+    private final By items_on_buy_page= By.xpath("//*[@class='inventory_item_name']");
+    private final By remove_button = By.xpath("//button[text()=\"Remove\"]");
+    private final By backToShopping_button=By.xpath("//*[@id=\"continue-shopping\"]");
+    private final By checkout_button=By.xpath("//*[@id=\"checkout\"]");
 
     public String getTitle() {
         WebElement buy_title = find(buy_page_title);

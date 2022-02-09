@@ -14,14 +14,14 @@ public class ItemsPage extends BasePage {
     public ItemsPage(WebDriver driver) {
         super(driver);
     }
-    private By items_list = By.xpath("//div[@class=\"inventory_item_name\"]");
-    private By item_title = By.xpath("//*[@class=\"title\"]");
-    private By item_price = By.xpath("//*[@id=\"inventory_container\"]/div/div/div[2]/div[2]/div");
-    private By buy_button = By.xpath("//*[@id=\"shopping_cart_container\"]/a");
-    private By add_to_cart = By.xpath("//*[@class=\"pricebar\"]/button[text()='Add to cart']");
-    private By remove_from_card = By.xpath("//button[text()=\"Remove\"]");
-    private By items_in_basket= By.xpath("//*[@id=\"shopping_cart_container\"]/a/span");
-    private By sort_button=By.xpath("//*[@class='product_sort_container']");
+    private final By items_list = By.xpath("//div[@class=\"inventory_item_name\"]");
+    private final By item_title = By.xpath("//*[@class=\"title\"]");
+    private final By item_price = By.xpath("//*[@id=\"inventory_container\"]/div/div/div[2]/div[2]/div");
+    private final By buy_button = By.xpath("//*[@id=\"shopping_cart_container\"]/a");
+    private final By add_to_cart = By.xpath("//*[@class=\"pricebar\"]/button[text()='Add to cart']");
+    private final By remove_from_card = By.xpath("//button[text()=\"Remove\"]");
+    private final By items_in_basket= By.xpath("//*[@id=\"shopping_cart_container\"]/a/span");
+    private final By sort_button=By.xpath("//*[@class='product_sort_container']");
 
 
     public List getItems() {
@@ -61,8 +61,6 @@ public class ItemsPage extends BasePage {
         for (int i = 0; i < add.size(); i++) {
             if (add.get(i).getText()!="REMOVE"){
                 add.get(i).click();
-            }else{
-                continue;
             }
         }
         list_item();

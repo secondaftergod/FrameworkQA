@@ -9,12 +9,12 @@ public class MainMenu extends BasePage {
     public MainMenu(WebDriver driver) {
         super(driver);
     }
-    private By main_menu_button=By.xpath("//*[@id=\"react-burger-menu-btn\"]");
-    private By main_menu_active=By.xpath("//*[@aria-hidden=\"false\"]");
-    private By main_allItems=By.xpath("//*[@id=\"inventory_sidebar_link\"]");
-    private By main_about=By.xpath("//*[@id=\"about_sidebar_link\"]");
-    private By main_logout=By.xpath("//*[@id=\"logout_sidebar_link\"]");
-    private By aboy_info=By.xpath("//*[@id=\"entry-3qDFahnypj1KkiORyU1Zyh\"]/div/div/div/div[1]/div/h1");
+    private final By main_menu_button=By.xpath("//*[@id=\"react-burger-menu-btn\"]");
+    private final By main_menu_active=By.xpath("//*[@aria-hidden=\"false\"]");
+    private final By main_allItems=By.xpath("//*[@id=\"inventory_sidebar_link\"]");
+    private final By main_about=By.xpath("//*[@id=\"about_sidebar_link\"]");
+    private final By main_logout=By.xpath("//*[@id=\"logout_sidebar_link\"]");
+    private final By aboy_info=By.xpath("//*[@id=\"entry-3qDFahnypj1KkiORyU1Zyh\"]/div/div/div/div[1]/div/h1");
 
     public void mainMenuToActive(){
         find(main_menu_button).click();

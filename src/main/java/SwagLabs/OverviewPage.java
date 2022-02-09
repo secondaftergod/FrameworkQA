@@ -8,12 +8,12 @@ public class OverviewPage extends BasePage {
     public OverviewPage(WebDriver driver) {
         super(driver);
     }
-    private By overview_title= By.xpath("//*[@id=\"header_container\"]/div[2]/span");
-    private By  cancel_button= By.xpath("//*[@id=\"cancel\"]");
-    private By finish_button = By.xpath("//*[@id=\"finish\"]");
-    private By total_price_item=By.xpath("//*[@class='summary_subtotal_label']");
-    private By tax_price_item= By.xpath("//*[@class='summary_tax_label']");
-    private By total_price=By.xpath("//*[@class='summary_total_label']");
+    private final By overview_title= By.xpath("//*[@id=\"header_container\"]/div[2]/span");
+    private final By  cancel_button= By.xpath("//*[@id=\"cancel\"]");
+    private final By finish_button = By.xpath("//*[@id=\"finish\"]");
+    private final By total_price_item=By.xpath("//*[@class='summary_subtotal_label']");
+    private final By tax_price_item= By.xpath("//*[@class='summary_tax_label']");
+    private final By total_price=By.xpath("//*[@class='summary_total_label']");
 
     public String getTitle(){
         return find(overview_title).getText();
