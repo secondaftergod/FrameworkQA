@@ -38,6 +38,10 @@ public class buyPageTest extends BaseTest {
         buyPage.backToShopping();
     }
 
+    @Test
+    public void goToCheckout(){
+        buyPage.go_to_checkout();
+    }
 
 
 }

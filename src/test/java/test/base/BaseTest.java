@@ -1,9 +1,7 @@
 package test.base;
 
 import Pages.BasePage;
-import SwagLabs.BuyPage;
-import SwagLabs.ItemsPage;
-import SwagLabs.LoginPage;
+import SwagLabs.*;
 import common.CommonActions;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -22,6 +20,9 @@ public class BaseTest {
     protected LoginPage loginPage= new LoginPage(driver);
     protected ItemsPage itemsPage= new ItemsPage(driver);
     protected BuyPage buyPage= new BuyPage(driver);
+    protected CheckOutPage checkoutPage= new CheckOutPage(driver);
+    protected OverviewPage overviewPage= new OverviewPage(driver);
+    protected FinishPage finishPage= new FinishPage(driver);
 
 
 

@@ -18,6 +18,8 @@ public class BuyPage extends BasePage {
     private By items_on_buy_page= By.xpath("//*[@class='inventory_item_name']");
     private By remove_button = By.xpath("//button[text()=\"Remove\"]");
     private By backToShopping_button=By.xpath("//*[@id=\"continue-shopping\"]");
+    private By checkout_button=By.xpath("//*[@id=\"checkout\"]");
+
     public String getTitle() {
         WebElement buy_title = driver.findElement(buy_page_title);
         return buy_title.getText();
@@ -34,6 +36,10 @@ public class BuyPage extends BasePage {
     }
     public void backToShopping(){
         driver.findElement(backToShopping_button);
+    }
+    public void go_to_checkout(){
+        driver.findElement(checkout_button).click();
+
     }
 
 }
