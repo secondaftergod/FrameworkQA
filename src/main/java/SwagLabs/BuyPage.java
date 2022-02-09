@@ -21,24 +21,24 @@ public class BuyPage extends BasePage {
     private By checkout_button=By.xpath("//*[@id=\"checkout\"]");
 
     public String getTitle() {
-        WebElement buy_title = driver.findElement(buy_page_title);
+        WebElement buy_title = find(buy_page_title);
         return buy_title.getText();
     }
     public List<WebElement> checkBuyList(){
-        List<WebElement> buylist=driver.findElements(items_on_buy_page);
+        List<WebElement> buylist=findAll(items_on_buy_page);
         return buylist;
     }
     public void removeFromBasket(){
-        List<WebElement> remove=driver.findElements(remove_button);
+        List<WebElement> remove=findAll(remove_button);
         for (int i = 0; i < remove.size(); i++) {
             remove.get(i).click();
         }
     }
     public void backToShopping(){
-        driver.findElement(backToShopping_button);
+        find(backToShopping_button);
     }
     public void go_to_checkout(){
-        driver.findElement(checkout_button).click();
+        find(checkout_button).click();
 
     }
 

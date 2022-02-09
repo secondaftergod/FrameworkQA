@@ -16,23 +16,23 @@ public class OverviewPage extends BasePage {
     private By total_price=By.xpath("//*[@class='summary_total_label']");
 
     public String getTitle(){
-        return driver.findElement(overview_title).getText();
+        return find(overview_title).getText();
     }
     public void go_toCheckoutPage(){
-        driver.findElement(cancel_button).click();
+        find(cancel_button).click();
     }
     public String getTotalPriceOrder(){
-        return driver.findElement(total_price_item).getText().replaceAll("[^0-9.]", "");
+        return find(total_price_item).getText().replaceAll("[^0-9.]", "");
 
     }
     public String  getTax(){
-        return driver.findElement(tax_price_item).getText().replaceAll("[^0-9.]", "");
+        return find(tax_price_item).getText().replaceAll("[^0-9.]", "");
     }
     public String getTotalPrice(){
-        return driver.findElement(total_price).getText().replaceAll("[^0-9.]", "");
+        return find(total_price).getText().replaceAll("[^0-9.]", "");
     }
     public void go_toFinishPage(){
-        driver.findElement(finish_button).click();
+        find(finish_button).click();
     }
 }
 

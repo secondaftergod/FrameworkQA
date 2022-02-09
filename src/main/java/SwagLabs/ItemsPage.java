@@ -25,18 +25,17 @@ public class ItemsPage extends BasePage {
 
 
     public List getItems() {
-        List<WebElement> invertory = driver.findElements(items_list);
+        List<WebElement> invertory = findAll(items_list);
         return invertory;
     }
 
     public List getPrice() {
-        List<WebElement> price = driver.findElements(item_price);
+        List<WebElement> price = findAll(item_price);
         return price;
     }
 
     public String getTitle() {
-        WebElement items_title = driver.findElement(item_title);
-        return items_title.getText();
+        return find(item_title).getText();
     }
 
     public List<Invertory> list_item() {
@@ -53,12 +52,12 @@ public class ItemsPage extends BasePage {
     }
 
     public void go_to_buy_items_page() {
-        driver.findElement(buy_button).click();
+        find(buy_button).click();
 
     }
 
     public void buy_item() {
-        List<WebElement> add = driver.findElements(add_to_cart);
+        List<WebElement> add = findAll(add_to_cart);
         for (int i = 0; i < add.size(); i++) {
             if (add.get(i).getText()!="REMOVE"){
                 add.get(i).click();
@@ -70,22 +69,29 @@ public class ItemsPage extends BasePage {
     }
 
     public int remove_itemButtonActivity() {
-        List<WebElement> remove = driver.findElements(remove_from_card);
+        List<WebElement> remove = findAll(remove_from_card);
         return remove.size();
     }
     public void remove_itemFromBasket(){
-        List<WebElement> remove = driver.findElements(remove_from_card);
+        List<WebElement> remove = findAll(remove_from_card);
         for (int i = 0; i < remove.size(); i++) {
             remove.get(i).click();
         }
     }
     public int items_inBasket(){
         try{
-            driver.findElement(items_in_basket);
+            find(items_in_basket);
         }catch (NoSuchElementException e){
             return 0;
         }
-        return Integer.valueOf(driver.findElement(items_in_basket).getText());
+        return Integer.valueOf(find(items_in_basket).getText());
+    }
+    public void toSort(){
+        find(sort_button);
+    }
+    public void changeSort(){
+        toSort();
+
     }
 
 }

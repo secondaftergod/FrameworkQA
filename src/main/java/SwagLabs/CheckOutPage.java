@@ -25,15 +25,15 @@ public class CheckOutPage extends BasePage {
         driver.findElement(cancel_button).click();
     }
     public CheckOutPage order_firstNameInput(String name){
-        driver.findElement(order_firstName).sendKeys(name);
+        find(order_firstName).sendKeys(name);
         return this;
     }
     public CheckOutPage order_lastNameInput(String last){
-        driver.findElement(order_lastName).sendKeys(last);
+        find(order_lastName).sendKeys(last);
         return this;
     }
     public CheckOutPage order_zipInput(String zip){
-        driver.findElement(order_Zip).sendKeys(zip);
+        find(order_Zip).sendKeys(zip);
         return this;
     }
     public void orderInfo(String name,String last,String zip){
@@ -55,10 +55,10 @@ public class CheckOutPage extends BasePage {
         }
     }
     public void go_to_overviewPage(){
-        driver.findElement(continue_button).click();
+        find(continue_button).click();
     }
     public WebElement error(){
-        return driver.findElement(infoError);
+        return find(infoError);
     }
     public WebElement infoAboutUserError(){
         return waitElementIsVISIBLE(error());

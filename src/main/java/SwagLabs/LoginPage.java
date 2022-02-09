@@ -15,15 +15,15 @@ public class LoginPage extends BasePage {
     private By login_error=By.xpath("//*[@id=\"login_button_container\"]/div/form/div[3]/h3");
 
     public LoginPage typeName(String loginname){
-        driver.findElement(name).sendKeys(loginname);
+        find(name).sendKeys(loginname);
         return this;
     }
     public LoginPage typePassword(String pass){
-        driver.findElement(password).sendKeys(pass);
+        find(password).sendKeys(pass);
         return this;
     }
     public void typeLoginButton(){
-        driver.findElement(login_button).click();
+        find(login_button).click();
 
     }
     public void typeLogin(String loginname, String pass){
@@ -33,7 +33,7 @@ public class LoginPage extends BasePage {
 
     }
     public String typeLoginError(){
-        return driver.findElement(login_error).getText();
+        return find(login_error).getText();
 
     }
 }

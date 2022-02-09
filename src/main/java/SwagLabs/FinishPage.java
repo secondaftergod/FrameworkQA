@@ -12,9 +12,9 @@ public class FinishPage extends BasePage {
     private By backhome_button=By.xpath("//*[@id=\"back-to-products\"]");
 
     public String getTitle(){
-        return driver.findElement(title).getText();
+        return find(title).getText();
     }
     public void return_to_main_menu(){
-        driver.findElement(backhome_button).click();
+        find(backhome_button).click();
     }
 }

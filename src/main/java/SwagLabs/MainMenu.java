@@ -17,21 +17,21 @@ public class MainMenu extends BasePage {
     private By aboy_info=By.xpath("//*[@id=\"entry-3qDFahnypj1KkiORyU1Zyh\"]/div/div/div/div[1]/div/h1");
 
     public void mainMenuToActive(){
-        driver.findElement(main_menu_button).click();
+        find(main_menu_button).click();
     }
     public WebElement mainMenuActive(){
         return waitElementIsVISIBLE(driver.findElement(main_menu_active));
     }
     public void toMainMenu(){
-        driver.findElement(main_allItems).click();
+        find(main_allItems).click();
     }
     public void toAbout(){
-        driver.findElement(main_about).click();
+        find(main_about).click();
     }
     public String aboutPage(){
-        return driver.findElement(aboy_info).getText();
+        return find(aboy_info).getText();
     }
     public void toLogout(){
-        driver.findElement(main_logout).click();
+        find(main_logout).click();
     }
 }
