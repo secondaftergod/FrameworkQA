@@ -23,6 +23,7 @@ public class BaseTest {
     protected CheckOutPage checkoutPage= new CheckOutPage(driver);
     protected OverviewPage overviewPage= new OverviewPage(driver);
     protected FinishPage finishPage= new FinishPage(driver);
+    protected MainMenu mainMenu= new MainMenu(driver);
 
 
 

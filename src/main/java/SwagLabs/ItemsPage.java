@@ -21,6 +21,8 @@ public class ItemsPage extends BasePage {
     private By add_to_cart = By.xpath("//*[@class=\"pricebar\"]/button[text()='Add to cart']");
     private By remove_from_card = By.xpath("//button[text()=\"Remove\"]");
     private By items_in_basket= By.xpath("//*[@id=\"shopping_cart_container\"]/a/span");
+    private By sort_button=By.xpath("//*[@class='product_sort_container']");
+
 
     public List getItems() {
         List<WebElement> invertory = driver.findElements(items_list);
