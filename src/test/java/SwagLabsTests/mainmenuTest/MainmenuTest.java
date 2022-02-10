@@ -3,6 +3,7 @@ package SwagLabsTests.mainmenuTest;
 import org.checkerframework.checker.units.qual.A;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import test.base.BaseTest;
 
@@ -13,18 +14,19 @@ public class MainmenuTest extends BaseTest {
     public void setUp() {
         basePage.open(LOGIN_PAGE_URL);
         loginPage.typeLogin("standard_user","secret_sauce");
+
     }
     @Test
     public void mainMenuActive(){
         mainMenu.mainMenuToActive();
         mainMenu.mainMenuActive();
     }
-    @Test
+    @Ignore
 
     public void toAllItems(){
+        mainMenu.walk();
         mainMenu.mainMenuToActive();
         mainMenu.toMainMenu();
-        mainMenu.closeMenu();
         Assert.assertEquals("PRODUCTS",mainMenu.getTitle());
     }
     @Test

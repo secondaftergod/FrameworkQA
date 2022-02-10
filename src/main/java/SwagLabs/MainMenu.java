@@ -16,7 +16,7 @@ public class MainMenu extends BasePage {
     private final By main_logout=By.xpath("//*[@id=\"logout_sidebar_link\"]");
     private final By aboy_info=By.xpath("//*[@id=\"entry-3qDFahnypj1KkiORyU1Zyh\"]/div/div/div/div[1]/div/h1");
     private final By item_title = By.xpath("//*[@class=\"title\"]");
-    private final By close_mainMenu=By.xpath("//*[@id=\"react-burger-cross-btn\"]");
+    private final By walk=By.xpath("//*[@id=\"item_4_title_link\"]/div");
 
     public void mainMenuToActive(){
         find(main_menu_button).click();
@@ -39,7 +39,7 @@ public class MainMenu extends BasePage {
     public String getTitle() {
         return find(item_title).getText();
     }
-    public void closeMenu(){
-        find(close_mainMenu).click();
+    public void walk(){
+        find(walk).click();
     }
 }
