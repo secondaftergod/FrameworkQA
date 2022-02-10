@@ -27,18 +27,19 @@ public class BaseTest {
 
 
 
-    @After
-    public void clearCookieAndLocalStorage() {
-        if(CLEAR_COOKIES_AND_STORAGE){
-            JavascriptExecutor javascriptExecutor=(JavascriptExecutor) driver;
-            driver.manage().deleteAllCookies();
-            javascriptExecutor.executeScript("window.sessionStorage.clear()");
-        }
-    }
-    @AfterClass
-    public static void close(){
-        if(HOLD_BROWSER_OPEN){
-            driver.quit();
-        }
-    }
+//    @After
+//    public void clearCookieAndLocalStorage() {
+//        if(CLEAR_COOKIES_AND_STORAGE){
+//            JavascriptExecutor javascriptExecutor=(JavascriptExecutor) driver;
+//            driver.manage().deleteAllCookies();
+//            javascriptExecutor.executeScript("window.sessionStorage.clear()");
+//        }
+//    }
+//    @AfterClass
+//    public static void close(){
+//        if(HOLD_BROWSER_OPEN){
+//            driver.quit();
+//        }
+//    }
+    
 }

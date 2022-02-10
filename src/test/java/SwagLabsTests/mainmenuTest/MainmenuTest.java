@@ -20,10 +20,12 @@ public class MainmenuTest extends BaseTest {
         mainMenu.mainMenuActive();
     }
     @Test
+
     public void toAllItems(){
         mainMenu.mainMenuToActive();
         mainMenu.toMainMenu();
-        Assert.assertEquals("PRODUCTS",itemsPage.getTitle());
+        mainMenu.closeMenu();
+        Assert.assertEquals("PRODUCTS",mainMenu.getTitle());
     }
     @Test
     public void toAbout(){
