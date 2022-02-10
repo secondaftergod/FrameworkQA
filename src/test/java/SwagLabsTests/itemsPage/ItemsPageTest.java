@@ -1,5 +1,6 @@
 package SwagLabsTests.itemsPage;
 
+import org.checkerframework.checker.units.qual.A;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -36,6 +37,11 @@ public class ItemsPageTest extends BaseTest {
     public void removeItemFromBasketAndCheckEmptyBasket(){
         itemsPage.remove_itemFromBasket();
         Assert.assertEquals(0,itemsPage.items_inBasket());
+    }
+    @Test
+    public void checkSortButton(){
+        itemsPage.toSort();
+        Assert.assertEquals(itemsPage.sortOption("az"),itemsPage.ActiveOptionsSort());
     }
 
 
