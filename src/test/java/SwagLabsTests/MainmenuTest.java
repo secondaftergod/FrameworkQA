@@ -1,6 +1,6 @@
-package SwagLabsTests.mainmenuTest;
+package SwagLabsTests;
 
-import org.checkerframework.checker.units.qual.A;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Ignore;

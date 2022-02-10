@@ -1,4 +1,4 @@
-package SwagLabsTests.checkoutPage;
+package SwagLabsTests;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -9,7 +9,7 @@ import java.util.*;
 
 import static constans.Constant.Urls.LOGIN_PAGE_URL;
 
-public class CheckOutPage extends BaseTest {
+public class CheckOutPageTest extends BaseTest {
     @Before
     public void setUp() {
         basePage.open(LOGIN_PAGE_URL);

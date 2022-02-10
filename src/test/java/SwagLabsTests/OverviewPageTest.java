@@ -1,4 +1,4 @@
-package SwagLabsTests.overviewPage;
+package SwagLabsTests;
 
 
 import SwagLabs.ItemsPage;
@@ -10,7 +10,7 @@ import test.base.BaseTest;
 
 import static constans.Constant.Urls.LOGIN_PAGE_URL;
 
-public class OverviewPage extends BaseTest {
+public class OverviewPageTest extends BaseTest {
     @Before
     public void setUp() {
         basePage.open(LOGIN_PAGE_URL);

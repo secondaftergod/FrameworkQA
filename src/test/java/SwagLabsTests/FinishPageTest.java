@@ -1,4 +1,4 @@
-package SwagLabsTests.finishPage;
+package SwagLabsTests;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -7,7 +7,7 @@ import test.base.BaseTest;
 
 import static constans.Constant.Urls.LOGIN_PAGE_URL;
 
-public class FinishPage extends BaseTest {
+public class FinishPageTest extends BaseTest {
     @Before
     public void setUp() {
         basePage.open(LOGIN_PAGE_URL);

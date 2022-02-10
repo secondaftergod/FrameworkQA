@@ -1,4 +1,4 @@
-package SwagLabsTests.buyPage;
+package SwagLabsTests;
 
 
 import org.junit.Assert;
