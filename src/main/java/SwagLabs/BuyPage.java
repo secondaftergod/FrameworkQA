@@ -21,7 +21,8 @@ public class BuyPage extends BasePage {
 
     public String getTitle() {
         WebElement buy_title = find(buy_page_title);
-        return buy_title.getText();
+        final String text = buy_title.getText();
+        return text;
     }
     public List<WebElement> checkBuyList(){
         List<WebElement> buylist=findAll(items_on_buy_page);
