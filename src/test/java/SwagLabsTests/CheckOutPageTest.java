@@ -3,10 +3,10 @@ package SwagLabsTests;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
-import io.qameta.allure.junit4.DisplayName;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import test.base.BaseTest;
 
 import java.util.*;
@@ -16,7 +16,7 @@ import static constans.Constant.Urls.LOGIN_PAGE_URL;
 @Feature("Check order address")
 @Owner("Ostap")
 public class CheckOutPageTest extends BaseTest {
-    @Before
+    @BeforeEach
     public void setUp() {
         basePage.open(LOGIN_PAGE_URL);
         loginPage.typeLogin("standard_user", "secret_sauce");
@@ -27,7 +27,7 @@ public class CheckOutPageTest extends BaseTest {
     @Test
     @DisplayName("Check title")
     public void checkTitles() {
-        Assert.assertEquals("Checkout: Your Information".toUpperCase(Locale.ROOT),checkoutPage.getTitle());
+        Assertions.assertEquals("Checkout: Your Information".toUpperCase(Locale.ROOT),checkoutPage.getTitle());
     }
     @Test
     @DisplayName("Check error in adress")
@@ -35,14 +35,14 @@ public class CheckOutPageTest extends BaseTest {
         checkoutPage.orderInfoError("first","last","zip");
         checkoutPage.orderInfoError("first","last","zip");
         checkoutPage.go_to_overviewPage();
-        Assert.assertEquals(checkoutPage.error(),checkoutPage.infoAboutUserError());
+        Assertions.assertEquals(checkoutPage.error(),checkoutPage.infoAboutUserError());
     }
     @Test
     @DisplayName("Check continue")
     public void checkInfoTrueAndContinueButton(){
         checkoutPage.orderInfo("firnt","last","zip");
         checkoutPage.go_to_overviewPage();
-        Assert.assertEquals("CHECKOUT: OVERVIEW",overviewPage.getTitle());
+        Assertions.assertEquals("CHECKOUT: OVERVIEW",overviewPage.getTitle());
 
     }
 

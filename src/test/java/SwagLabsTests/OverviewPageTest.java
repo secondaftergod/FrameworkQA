@@ -5,10 +5,10 @@ import SwagLabs.ItemsPage;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
-import io.qameta.allure.junit4.DisplayName;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import test.base.BaseTest;
 
 
@@ -17,7 +17,7 @@ import static constans.Constant.Urls.LOGIN_PAGE_URL;
 @Feature("Check Prices")
 @Owner("Ostap")
 public class OverviewPageTest extends BaseTest {
-    @Before
+    @BeforeEach
     public void setUp() {
         basePage.open(LOGIN_PAGE_URL);
         loginPage.typeLogin("standard_user", "secret_sauce");
@@ -30,13 +30,13 @@ public class OverviewPageTest extends BaseTest {
     @Test
     @DisplayName("Check title")
     public void getTitle(){
-        Assert.assertEquals("CHECKOUT: OVERVIEW",overviewPage.getTitle());
+        Assertions.assertEquals("CHECKOUT: OVERVIEW",overviewPage.getTitle());
     }
     @Test
     @DisplayName("Cancel button")
     public void useCancelButton(){
         overviewPage.go_toCheckoutPage();
-        Assert.assertEquals("PRODUCTS",itemsPage.getTitle());
+        Assertions.assertEquals("PRODUCTS",itemsPage.getTitle());
     }
     @Test
     @DisplayName("Check price")
@@ -46,7 +46,7 @@ public class OverviewPageTest extends BaseTest {
             pr+=Double.parseDouble(ItemsPage.buy_list.get(i).item_price);
         }
         String items_price=String.valueOf(pr);
-        Assert.assertEquals(items_price,overviewPage.getTotalPriceOrder());
+        Assertions.assertEquals(items_price,overviewPage.getTotalPriceOrder());
 
     }
     @Test
@@ -58,6 +58,6 @@ public class OverviewPageTest extends BaseTest {
         }
         Double tax_items= Double.parseDouble(overviewPage.getTax())+pr;
         Double total= Double.valueOf(overviewPage.getTotalPrice());
-        Assert.assertEquals(tax_items,total);
+        Assertions.assertEquals(tax_items,total);
     }
 }

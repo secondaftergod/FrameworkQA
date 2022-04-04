@@ -4,11 +4,7 @@ package SwagLabsTests;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
-import io.qameta.allure.junit4.DisplayName;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 import test.base.BaseTest;
 
 import static constans.Constant.Urls.LOGIN_PAGE_URL;
@@ -16,7 +12,7 @@ import static constans.Constant.Urls.LOGIN_PAGE_URL;
 @Feature("Main menu buttons")
 @Owner("Ostap")
 public class MainmenuTest extends BaseTest {
-    @Before
+    @BeforeEach
     public void setUp() {
         basePage.open(LOGIN_PAGE_URL);
         loginPage.typeLogin("standard_user","secret_sauce");
@@ -28,26 +24,25 @@ public class MainmenuTest extends BaseTest {
         mainMenu.mainMenuToActive();
         mainMenu.mainMenuActive();
     }
-    @Ignore
-
+    @Disabled
     public void toAllItems(){
         mainMenu.walk();
         mainMenu.mainMenuToActive();
         mainMenu.toMainMenu();
-        Assert.assertEquals("PRODUCTS",mainMenu.getTitle());
+        Assertions.assertEquals("PRODUCTS",mainMenu.getTitle());
     }
     @Test
     @DisplayName("Check about")
     public void toAbout(){
         mainMenu.mainMenuToActive();
         mainMenu.toAbout();
-        Assert.assertEquals("DEVELOP WITH CONFIDENCE",mainMenu.aboutPage());
+        Assertions.assertEquals("DEVELOP WITH CONFIDENCE",mainMenu.aboutPage());
     }
     @Test
     @DisplayName("Check logout")
     public void toLogout(){
         mainMenu.mainMenuToActive();
         mainMenu.toLogout();
-        Assert.assertEquals(driver.getCurrentUrl(),LOGIN_PAGE_URL);
+        Assertions.assertEquals(driver.getCurrentUrl(),LOGIN_PAGE_URL);
     }
 }

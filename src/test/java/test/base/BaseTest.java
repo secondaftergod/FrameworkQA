@@ -3,8 +3,8 @@ package test.base;
 import Pages.BasePage;
 import SwagLabs.*;
 import common.CommonActions;
-import org.junit.After;
-import org.junit.AfterClass;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
@@ -25,9 +25,9 @@ public class BaseTest {
     protected FinishPage finishPage= new FinishPage(driver);
     protected MainMenu mainMenu= new MainMenu(driver);
 
-
-
-//    @After
+//
+//
+//    @AfterAll
 //    public void clearCookieAndLocalStorage() {
 //        if(CLEAR_COOKIES_AND_STORAGE){
 //            JavascriptExecutor javascriptExecutor=(JavascriptExecutor) driver;
@@ -35,7 +35,7 @@ public class BaseTest {
 //            javascriptExecutor.executeScript("window.sessionStorage.clear()");
 //        }
 //    }
-//    @AfterClass
+//    @AfterEach
 //    public static void close(){
 //        if(HOLD_BROWSER_OPEN){
 //            driver.quit();

@@ -4,10 +4,10 @@ package SwagLabsTests;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
-import io.qameta.allure.junit4.DisplayName;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import test.base.BaseTest;
 
 
@@ -16,7 +16,7 @@ import static constans.Constant.Urls.LOGIN_PAGE_URL;
 @Feature("Check buy items")
 @Owner("Ostap")
 public class buyPageTest extends BaseTest {
-    @Before
+    @BeforeEach
     public void setUp() {
         basePage.open(LOGIN_PAGE_URL);
         loginPage.typeLogin("standard_user","secret_sauce");
@@ -28,13 +28,13 @@ public class buyPageTest extends BaseTest {
     @DisplayName("Check buy items")
     public void checkBuyItems(){
         for(int i=0; i<buyPage.checkBuyList().size();i++) {
-            Assert.assertEquals(itemsPage.buy_list.get(i).item_name,buyPage.checkBuyList().get(i).getText());
+            Assertions.assertEquals(itemsPage.buy_list.get(i).item_name,buyPage.checkBuyList().get(i).getText());
         }
     }
     @Test
     @DisplayName("Get Title")
     public void checkBuyPage(){
-        Assert.assertEquals("YOUR CART",buyPage.getTitle());
+        Assertions.assertEquals("YOUR CART",buyPage.getTitle());
     }
 
     @Test

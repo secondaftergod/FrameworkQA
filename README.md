@@ -1,12 +1,12 @@
 
 **Generate Allure reports**
 
-`mvn clean install`
+`mvn clean test allure:report`
 
 
 **Run Allure server**
 
-`allure serve target/allure-results`
+`mvn allure:serve`
 
 **Jenkins**
 
