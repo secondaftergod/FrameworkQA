@@ -2,6 +2,10 @@ package SwagLabsTests;
 
 
 import SwagLabs.ItemsPage;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -9,7 +13,9 @@ import test.base.BaseTest;
 
 
 import static constans.Constant.Urls.LOGIN_PAGE_URL;
-
+@Epic("Overview Page")
+@Feature("Check Prices")
+@Owner("Ostap")
 public class OverviewPageTest extends BaseTest {
     @Before
     public void setUp() {
@@ -22,15 +28,18 @@ public class OverviewPageTest extends BaseTest {
         checkoutPage.go_to_overviewPage();
     }
     @Test
+    @DisplayName("Check title")
     public void getTitle(){
         Assert.assertEquals("CHECKOUT: OVERVIEW",overviewPage.getTitle());
     }
     @Test
+    @DisplayName("Cancel button")
     public void useCancelButton(){
         overviewPage.go_toCheckoutPage();
         Assert.assertEquals("PRODUCTS",itemsPage.getTitle());
     }
     @Test
+    @DisplayName("Check price")
     public void eqBuyPriceAndTotalPriceAndFullPrice(){
         Double pr=0.0;
         for(int i = 0; i< ItemsPage.buy_list.size(); i++){
@@ -41,6 +50,7 @@ public class OverviewPageTest extends BaseTest {
 
     }
     @Test
+    @DisplayName("Check total price")
     public void getTotalPrice(){
         Double pr=0.0;
         for(int i=0; i<itemsPage.buy_list.size();i++){
